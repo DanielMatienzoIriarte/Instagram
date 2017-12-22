@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_general_margin">16dp</dimen>
+    <dimen name="cardview_corner_radius">4dp</dimen>
+    <dimen name="coverdata_name">22sp</dimen>
+    <dimen name="contact_fieldName">20sp</dimen>
+    <dimen name="elevation_action_bar">4dp</dimen>
+    <dimen name="cardview_profile_block">110dp</dimen>
+</resources>
