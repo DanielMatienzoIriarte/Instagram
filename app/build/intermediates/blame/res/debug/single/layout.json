@@ -308,6 +308,10 @@
         "source": "C:\\Users\\Roxy\\.android\\build-cache\\30fed379525b76408a220ac4a3ce1ff0b86457d3\\output\\res\\layout\\abc_search_view.xml"
     },
     {
+        "merged": "E:\\D\\Proyectos\\Instagram\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cardview_grid_pet.xml",
+        "source": "E:\\D\\Proyectos\\Instagram\\app\\src\\main\\res\\layout\\cardview_grid_pet.xml"
+    },
+    {
         "merged": "E:\\D\\Proyectos\\DataBaseProject\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "C:\\Users\\Roxy\\.android\\build-cache\\30fed379525b76408a220ac4a3ce1ff0b86457d3\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },

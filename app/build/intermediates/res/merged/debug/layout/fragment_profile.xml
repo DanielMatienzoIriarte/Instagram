@@ -9,8 +9,8 @@
 
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/fragmentProfile_circularImageView"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="@dimen/cardview_profile_avatar_size"
+        android:layout_height="@dimen/cardview_profile_avatar_size"
         android:layout_centerHorizontal="true"
         android:src="@drawable/dog_haski_icon"
         app:civ_border_color="#EEEEEE"
