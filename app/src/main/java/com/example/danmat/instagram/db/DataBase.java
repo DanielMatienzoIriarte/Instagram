@@ -27,7 +27,8 @@ public class DataBase extends SQLiteOpenHelper {
             String createPetTableQuery = "CREATE TABLE IF NOT EXISTS " + DataBaseConstants.TABLE_PETS +
                     "(" + DataBaseConstants.TABLE_PETS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     DataBaseConstants.TABLE_PETS_NAME + " TEXT, " +
-                    DataBaseConstants.TABLE_PETS_AVATAR + " INTEGER" +
+                    DataBaseConstants.TABLE_PETS_AVATAR + " INTEGER, " +
+                    "UNIQUE(" + DataBaseConstants.TABLE_PETS_ID + ", " + DataBaseConstants.TABLE_PETS_NAME + ")" +
                     ")";
             db.execSQL(createPetTableQuery);
 
@@ -48,7 +49,8 @@ public class DataBase extends SQLiteOpenHelper {
         if (isFirstCreation) {
             String insertPet1 = "INSERT INTO " + DataBaseConstants.TABLE_PETS + " ("  + DataBaseConstants.TABLE_PETS_ID + ", "
                     + DataBaseConstants.TABLE_PETS_NAME + ", " +
-                    DataBaseConstants.TABLE_PETS_AVATAR + ") VALUES(0, 'Mortis', " + R.drawable.dog_bark_icon + "), " +
+                    DataBaseConstants.TABLE_PETS_AVATAR + ") VALUES" +
+                    "(0, 'Mortis', " + R.drawable.dog_bark_icon + "), " +
                     "(1, 'Vato Loco', " + R.drawable.dog_chihuahua_bone_icon + "), " +
                     "(2, 'Gordo', " + R.drawable.dog_dalmatian_king_icon + "), " +
                     "(3, 'Rita', " + R.drawable.dog_einstein_icon + "), " +

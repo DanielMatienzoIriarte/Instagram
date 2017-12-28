@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public interface IRecyclerViewFragmentView {
     public void generateVerticalLinearLayout();
 
+    public void generateGridLayout();
+
     public PetAdapter createAdapter(ArrayList<Pet> petsList);
 
     public void initializeRVAdapter(PetAdapter petAdapter);

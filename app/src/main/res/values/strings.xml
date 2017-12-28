@@ -14,6 +14,9 @@
     <string name="main_options_contact_email">Email</string>
     <string name="main_options_contact_message">Message</string>
     <string name="main_options_contact_send">Send</string>
+    <string name="account_textview_userName">Enter your User Name</string>
+    <string name="account_button_sendForm">Save Account</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

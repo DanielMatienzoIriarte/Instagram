@@ -20,4 +20,10 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorPrimaryText</item>
     </style>
+
+    <style name="accountData">
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">@dimen/accountData_title</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
 </resources>

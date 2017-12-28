@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:2:1-55:12
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:2:1-68:12
 	package
 		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:3:5-43
 		INJECTED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:7:5-53:19
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:7:5-66:19
 MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Roxy\.android\build-cache\fd9156d55d22f004ecb697cbebe40ac03206076e\output\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Roxy\.android\build-cache\dd7e5acdb6932013624601c8f09eab35f91cf672\output\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Roxy\.android\build-cache\30fed379525b76408a220ac4a3ce1ff0b86457d3\output\AndroidManifest.xml:25:5-29:19
@@ -62,35 +62,41 @@ ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.example.danmat.instagram.PetDetailActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:21:9-28:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:21:9-29:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:22:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:23:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:21:19-52
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:22:13-46
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:24:13-27:25
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:26:13-28:59
 	android:value
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:26:17-46
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:28:17-46
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:25:17-63
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:27:17-63
 activity#com.example.danmat.instagram.Top5Activity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:29:9-36:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:30:9-38:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:30:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:32:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:29:19-47
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:31:13-41
 activity#com.example.danmat.instagram.ContactActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:37:9-44:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:39:9-47:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:38:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:41:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:37:19-50
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:40:13-44
 activity#com.example.danmat.instagram.AboutActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:45:9-52:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:48:9-56:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:46:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:50:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:45:19-48
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:49:13-42
+activity#com.example.danmat.instagram.AccountActivity
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:57:9-65:20
+	android:parentActivityName
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:59:13-55
+	android:name
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:58:13-44
 uses-sdk
 INJECTED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Roxy\.android\build-cache\fd9156d55d22f004ecb697cbebe40ac03206076e\output\AndroidManifest.xml:20:5-44

@@ -1,11 +1,20 @@
 package com.example.danmat.instagram.presenter;
 
 import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.example.danmat.instagram.R;
 import com.example.danmat.instagram.db.PetsConstructor;
 import com.example.danmat.instagram.fragments.IRecyclerViewFragmentView;
 import com.example.danmat.instagram.pojo.Pet;
+import com.example.danmat.instagram.restApi.EndpointsApi;
+import com.example.danmat.instagram.restApi.adapter.RestApiAdapter;
+import com.example.danmat.instagram.restApi.model.PetResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import java.util.ArrayList;
 
@@ -18,27 +27,7 @@ public class RecyclerViewFragmentPresenter implements IRecyclerViewFragmentPrese
     public RecyclerViewFragmentPresenter(IRecyclerViewFragmentView iRecyclerViewFragmentView, Context context) {
         this.iRecyclerViewFragmentView = iRecyclerViewFragmentView;
         this.context = context;
-        insertPets();
         getDatabasePets();
-    }
-
-    public void insertPets() {
-        Pet pet1 = new Pet(1, "Mortis", R.drawable.dog_bark_icon);
-        Pet pet2 = new Pet(2, "Vato Loco", R.drawable.dog_chihuahua_bone_icon);
-        Pet pet3 = new Pet(3, "Gordo", R.drawable.dog_dalmatian_king_icon);
-        Pet pet4 = new Pet(4, "Rita", R.drawable.dog_einstein_icon);
-        Pet pet5 = new Pet(5, "Laika", R.drawable.dog_haski_icon);
-        Pet pet6 = new Pet(6, "Dogo", R.drawable.dog_einstein_icon);
-        Pet pet7 = new Pet(7, "Linda", R.drawable.dog_haski_icon);
-
-        petsConstructor = new PetsConstructor(context);
-        petsConstructor.insertPet(pet1);
-        petsConstructor.insertPet(pet3);
-        petsConstructor.insertPet(pet2);
-        petsConstructor.insertPet(pet4);
-        petsConstructor.insertPet(pet5);
-        petsConstructor.insertPet(pet6);
-        petsConstructor.insertPet(pet7);
     }
 
     @Override
@@ -52,5 +41,28 @@ public class RecyclerViewFragmentPresenter implements IRecyclerViewFragmentPrese
     public void displayRecyclerViewPets() {
         iRecyclerViewFragmentView.initializeRVAdapter(iRecyclerViewFragmentView.createAdapter(petsList));
         iRecyclerViewFragmentView.generateVerticalLinearLayout();
+        //iRecyclerViewFragmentView.generateGridLayout();
+    }
+
+    @Override
+    public void getRecentMedia() {
+        RestApiAdapter restApiAdapter = new RestApiAdapter();
+        EndpointsApi endpointsApi = restApiAdapter.setRestConnectionInstagramApi();
+        Call<PetResponse> petResponseCall = endpointsApi.getRecentMedia();
+
+        petResponseCall.enqueue(new Callback<PetResponse>() {
+            @Override
+            public void onResponse(Call<PetResponse> call, Response<PetResponse> response) {
+                PetResponse petResponse = response.body();
+                petsList = petResponse.getPetsList();
+                displayRecyclerViewPets();
+            }
+
+            @Override
+            public void onFailure(Call<PetResponse> call, Throwable t) {
+                Toast.makeText(context, "Data retrieval failed", Toast.LENGTH_LONG).show();
+                Log.e("Bad conection", t.toString());
+            }
+        });
     }
 }

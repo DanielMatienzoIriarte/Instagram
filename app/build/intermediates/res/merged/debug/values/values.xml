@@ -620,6 +620,7 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="accountData_title">30sp</dimen>
     <dimen name="activity_division_margin">8dp</dimen>
     <dimen name="activity_general_margin">16dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
@@ -788,6 +789,8 @@
     <string name="aboutText">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
     </string>
+    <string name="account_button_sendForm">Save Account</string>
+    <string name="account_textview_userName">Enter your User Name</string>
     <string name="app_name">Petagram</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -821,7 +824,7 @@
         <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -2370,6 +2373,11 @@
         <item name="passwordToggleDrawable">@drawable/design_password_eye</item>
         <item name="passwordToggleTint">@color/design_tint_password_toggle</item>
         <item name="passwordToggleContentDescription">@string/password_toggle_content_description</item>
+    </style>
+    <style name="accountData">
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">@dimen/accountData_title</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
     </style>
     <style name="coverData">
         <item name="android:textStyle">bold</item>

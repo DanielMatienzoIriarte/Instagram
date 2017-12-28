@@ -30,6 +30,10 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.optionsMenu_item_account:
+                Intent accountIntent = new Intent(this, AccountActivity.class);
+                startActivity(accountIntent);
+                break;
             case R.id.optionsMenu_item_contact:
                 Intent contactIntent = new Intent(this, ContactActivity.class);
                 startActivity(contactIntent);

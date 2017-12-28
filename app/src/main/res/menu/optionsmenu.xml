@@ -23,4 +23,10 @@
         android:orderInCategory="3"
         >
     </item>
+    <item
+        android:id="@+id/optionsMenu_item_account"
+        android:title="Account"
+        android:orderInCategory="4"
+        >
+    </item>
 </menu>

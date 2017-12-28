@@ -10,4 +10,5 @@
     <dimen name="elevation_action_bar">4dp</dimen>
     <dimen name="cardview_profile_block">110dp</dimen>
     <dimen name="cardview_profile_avatar_size">110dp</dimen>
+    <dimen name="accountData_title">30sp</dimen>
 </resources>
