@@ -2,7 +2,6 @@ package com.example.danmat.instagram.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,23 +9,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.example.danmat.instagram.MainActivity;
 import com.example.danmat.instagram.R;
-import com.example.danmat.instagram.adapters.PetAdapter;
+import com.example.danmat.instagram.adapters.ProfileAdapter;
 import com.example.danmat.instagram.pojo.Pet;
-import com.example.danmat.instagram.presenter.IRecyclerViewFragmentPresenter;
-import com.example.danmat.instagram.presenter.RecyclerViewFragmentPresenter;
+import com.example.danmat.instagram.presenter.IRecyclerViewProfileFragmentPresenter;
+import com.example.danmat.instagram.presenter.ProfileRecyclerViewFragmentPresenter;
 
 import java.util.ArrayList;
 
-public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView {
+public class RecyclerViewAccountFragment extends Fragment implements IRecyclerViewProfileView {
     ArrayList<Pet> petsList;
     private RecyclerView petsListRecyclerView;
-    private IRecyclerViewFragmentPresenter iRecyclerViewFragmentPresenter;
+    private IRecyclerViewProfileFragmentPresenter iRecyclerViewProfileFragmentPresenter;
+    private String accountUserName;
 
-    public RecyclerViewFragment() {
+    public RecyclerViewAccountFragment() {
     }
 
     @Nullable
@@ -34,11 +32,20 @@ public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragm
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_recycler_view, container, false);
+        View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        petsListRecyclerView = (RecyclerView) v.findViewById(R.id.main_recyclerView_pets);
+        petsListRecyclerView = (RecyclerView) v.findViewById(R.id.profile_recyclerView_pets);
+        String accountUserName = "";
 
-        iRecyclerViewFragmentPresenter = new RecyclerViewFragmentPresenter(this, getContext());
+        if(getArguments() != null) {
+            accountUserName = getArguments().getString("accountUserName");
+        }
+
+        iRecyclerViewProfileFragmentPresenter = new ProfileRecyclerViewFragmentPresenter(
+                this,
+                getContext(),
+                accountUserName
+        );
 
         return v;
     }
@@ -52,25 +59,17 @@ public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragm
 
     @Override
     public void generateGridLayout() {
-        GridLayoutManager glm = new GridLayoutManager(getContext(), 3);
+        GridLayoutManager glm = new GridLayoutManager(getActivity(), 2);
         petsListRecyclerView.setLayoutManager(glm);
     }
 
     @Override
-    public PetAdapter createAdapter(ArrayList<Pet> petsList) {
-        return new PetAdapter(petsList, getActivity());
+    public ProfileAdapter createAdapter(ArrayList<Pet> petsList) {
+        return new ProfileAdapter(petsList, getActivity());
     }
 
     @Override
-    public void initializeRVAdapter(PetAdapter petAdapter) {
+    public void initializeRVAdapter(ProfileAdapter petAdapter) {
         petsListRecyclerView.setAdapter(petAdapter);
     }
 }
-
-
-
-
-
-
-
-

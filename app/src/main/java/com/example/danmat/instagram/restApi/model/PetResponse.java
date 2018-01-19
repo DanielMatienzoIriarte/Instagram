@@ -1,6 +1,5 @@
 package com.example.danmat.instagram.restApi.model;
 
-
 import com.example.danmat.instagram.pojo.Pet;
 
 import java.util.ArrayList;

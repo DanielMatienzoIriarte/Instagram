@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "967355214261",
+    "firebase_url": "https://petagram-956d3.firebaseio.com",
+    "project_id": "petagram-956d3",
+    "storage_bucket": "petagram-956d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967355214261:android:dba25c5aaf966c23",
+        "android_client_info": {
+          "package_name": "com.example.danmat.instagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967355214261-6afd2dg42ahakr5g9dn57qnsp7mu87br.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.danmat.instagram",
+            "certificate_hash": "c73c2a1f58b50999f7dc611811a8a2e01edd9a57"
+          }
+        },
+        {
+          "client_id": "967355214261-99akmbgvu6n9ac9k027p0qf230p25k5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeUajvAAzP_ZSfQeG6VlBDi8gPUoMiNRQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967355214261-99akmbgvu6n9ac9k027p0qf230p25k5u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

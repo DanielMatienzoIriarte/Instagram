@@ -4,8 +4,8 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/cardview_grid_pets"
     android:layout_width="wrap_content"
-    android:layout_height="100dp"
-    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_profile_margin"
     card_view:cardCornerRadius="@dimen/cardview_corner_radius">
 
     <LinearLayout
@@ -15,9 +15,9 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:id="@+id/cardview_imageview_avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/cardview_profile_imageview_avatar"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
             android:src="@drawable/dog_bark_icon"
             android:contentDescription="@null">
         </ImageView>
@@ -29,15 +29,16 @@
             android:layout_marginTop="@dimen/activity_division_margin"
             android:layout_gravity="center_horizontal">
             <TextView
-                android:id="@+id/cardview_textview_rate_text"
+                android:id="@+id/cardview_profile_textview_rate_text"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/activity_division_margin"
+                android:layout_marginEnd="@dimen/activity_division_margin"
                 android:text="@string/cardview_textview_rate_icon_rate_value"
                 android:textSize="@dimen/coverdata_name" />
 
             <ImageView
-                android:id="@+id/cardview_imageview_rated_icon"
+                android:id="@+id/cardview_profile_imageview_rated_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:src="@drawable/bone_1_icon"

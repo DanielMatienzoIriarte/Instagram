@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_general_margin"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="bottom|end"
             android:src="@drawable/icons8_slr_camera_50"/>
     </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

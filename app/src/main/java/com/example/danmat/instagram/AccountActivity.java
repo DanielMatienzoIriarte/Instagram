@@ -1,6 +1,8 @@
 package com.example.danmat.instagram;
 
 import android.content.Intent;
+import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,7 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.danmat.instagram.fragments.ProfileFragment;
+import com.example.danmat.instagram.fragments.RecyclerViewAccountFragment;
 import com.example.danmat.instagram.javaMail.GMailSender;
+import com.example.danmat.instagram.presenter.ProfileRecyclerViewFragmentPresenter;
 
 public class AccountActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -23,11 +28,18 @@ public class AccountActivity extends AppCompatActivity {
 
         final Button saveAccountButton = (Button) findViewById(R.id.account_button_sendForm);
         saveAccountButton.setOnClickListener(new View.OnClickListener(){
+            TextInputLayout accountUserName = (TextInputLayout) findViewById(R.id.account_textInputLayout_userName);
 
             @Override
             public void onClick(View v) {
                 try {
-                    Toast.makeText(AccountActivity.this, "Account saved succesfully", Toast.LENGTH_LONG).show();
+                    /*Bundle bundle = new Bundle();
+                    bundle.putString("accountUserName", accountUserName.getEditText().getText().toString());
+                    RecyclerViewAccountFragment recyclerViewAccountFragment = new RecyclerViewAccountFragment();
+                    recyclerViewAccountFragment.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, recyclerViewAccountFragment).commit();*/
+                    Toast.makeText(AccountActivity.this, "Account saved succesfully " + accountUserName.getEditText().getText().toString(), Toast.LENGTH_LONG).show();
+
                 } catch (Exception e) {
                     Log.e("saveAccount", e.getMessage(), e);
                 }

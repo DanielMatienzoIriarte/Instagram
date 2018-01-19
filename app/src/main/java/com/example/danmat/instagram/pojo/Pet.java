@@ -5,6 +5,7 @@ public class Pet {
     private String name;
     private int avatar;
     private int rate;
+    private String avatarUrl;
 
     public Pet() {
 
@@ -15,6 +16,7 @@ public class Pet {
         this.name = name;
         this.avatar = avatar;
         this.rate = 0;
+        this.avatarUrl ="";
     }
 
     public Pet(int petId, String name, int avatar, int rate) {
@@ -22,6 +24,7 @@ public class Pet {
         this.name = name;
         this.avatar = avatar;
         this.rate = rate;
+        this.avatarUrl = "";
     }
 
     public int getPetId() { return petId; }
@@ -52,5 +55,13 @@ public class Pet {
 
     public void setRate(int rate) {
         this.rate = rate;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }

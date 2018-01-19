@@ -16,6 +16,7 @@
     </android.support.v7.widget.RecyclerView>
 
     <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -24,7 +25,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_general_margin"
-            android:layout_gravity="bottom|right"
-            android:src="@drawable/icons8_slr_camera_50"/>
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/icons8_slr_camera_50"
+            android:onClick="launchNotification"/>
     </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>
