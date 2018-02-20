@@ -16,10 +16,18 @@ import android.widget.Toast;
 
 import com.example.danmat.instagram.adapters.PagerAdapter;
 import com.example.danmat.instagram.fragments.ProfileFragment;
+import com.example.danmat.instagram.fragments.RecyclerViewAccountFragment;
 import com.example.danmat.instagram.fragments.RecyclerViewFragment;
+import com.example.danmat.instagram.restApi.EndpointsApi;
+import com.example.danmat.instagram.restApi.adapter.RestApiAdapter;
+import com.example.danmat.instagram.restApi.model.UserResponse;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -41,11 +49,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void launchNotification(View v) {
         String token = FirebaseInstanceId.getInstance().getToken();
-        sendRegisterToken(token);
+        //sendRegisterToken(token);
     }
 
     private void sendRegisterToken(String token) {
+        Toast.makeText(this, "Notification token: " + token, Toast.LENGTH_LONG).show();
         Log.d("TOKEN: ", token);
+        RestApiAdapter restApiAdapter = new RestApiAdapter();
+        EndpointsApi endpointsApi = restApiAdapter.stablishRestAPIConnection();
+        Call<UserResponse> userResponseCall = endpointsApi.registerTokenId(token);
+
+        userResponseCall.enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                UserResponse userResponse = response.body();
+                Log.d("ID FIREBASE", userResponse.getId());
+                Log.d("TOKEN_FIREBASE", userResponse.getToken());
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+
+            }
+        });
     }
 
     @Override
@@ -57,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
+            /*case R.id.optionsMenu_item_registerUser:
+                Intent notificationIntent = new Intent(this, NotificationActivity.class);
+                startActivity(notificationIntent);
+                break;*/
             case R.id.optionsMenu_item_account:
                 Intent accountIntent = new Intent(this, AccountActivity.class);
                 startActivity(accountIntent);
@@ -83,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         fragments.add(new RecyclerViewFragment());
         fragments.add(new ProfileFragment());
+//        fragments.add(new RecyclerViewAccountFragment());
 
         return fragments;
     }

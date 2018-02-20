@@ -20,9 +20,27 @@ public class RestApiAdapter {
         return retrofit.create(EndpointsApi.class);
     }
 
+    public EndpointsApi setRestConnectionInstagramURL(Gson gson){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(apiConstants.ROOT_URL_NO_API)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+
+        return retrofit.create(EndpointsApi.class);
+    }
+
     public Gson buildPetDeserializer(){
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(PetResponse.class, new PetDeserializer());
         return gsonBuilder.create();
+    }
+
+    public EndpointsApi stablishRestAPIConnection() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(apiConstants.HEROKU_ROOT_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(EndpointsApi.class);
     }
 }

@@ -29,4 +29,10 @@
         android:orderInCategory="4"
         >
     </item>
+    <item
+        android:id="@+id/optionsMenu_item_registerUser"
+        android:title="Notifications"
+        android:orderInCategory="5"
+        >
+    </item>
 </menu>

@@ -20,13 +20,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.design.widget.FloatingActionButton
+        <!--<android.support.design.widget.FloatingActionButton
             android:id="@+id/main_floatingButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_general_margin"
             android:layout_gravity="bottom|end"
             android:src="@drawable/icons8_slr_camera_50"
-            android:onClick="launchNotification"/>
+            android:onClick="launchNotification"/>-->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/main_floatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_general_margin"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/icons8_slr_camera_50"/>
     </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

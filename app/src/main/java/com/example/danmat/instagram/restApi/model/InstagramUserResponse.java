@@ -1,8 +1,34 @@
 package com.example.danmat.instagram.restApi.model;
 
-/**
- * Created by Roxy on 03/02/2018.
- */
+public class InstagramUserResponse {
+    private String id;
+    private String deviceId;
+    private String instagramUserId;
 
-public class instagramUserResponse {
+    public InstagramUserResponse(String deviceId, String instagramUserId) {
+        this.deviceId = deviceId;
+        this.instagramUserId = instagramUserId;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getInstagramUserId() {
+        return instagramUserId;
+    }
+
+    public void setInstagramUserId(String instagramUserId) {
+        this.instagramUserId = instagramUserId;
+    }
+
+    public String getId() { return id; }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

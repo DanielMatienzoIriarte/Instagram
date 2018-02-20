@@ -1,8 +1,7 @@
 package com.example.danmat.instagram.presenter;
 
-/**
- * Created by Roxy on 12/02/2018.
- */
+public interface IRecyclerViewAccountFragmentPresenter {
+    public void displayRecyclerViewPets();
 
-public class IRecyclerViewAccountFragmentPresenter {
+    public void getAccountStoredPets(String userId);
 }

@@ -33,41 +33,6 @@ public class ProfileRecyclerViewFragmentPresenter implements IRecyclerViewProfil
         this.context = context;
         getStoredPets();
     }
-
-    public ProfileRecyclerViewFragmentPresenter(
-            IRecyclerViewProfileView iRecyclerViewProfileView,
-            Context context,
-            String accountUserName
-    ) {
-        this.iRecyclerViewProfileView = iRecyclerViewProfileView;
-        this.context = context;
-        getAccountStoredPets(accountUserName);
-    }
-
-    @Override
-    public void getAccountStoredPets(String userId) {
-        RestApiAdapter restApiAdapter = new RestApiAdapter();
-        Gson gsonRecentMedia = restApiAdapter.buildPetDeserializer();
-        EndpointsApi endpointsApi = restApiAdapter.setRestConnectionInstagramApi(gsonRecentMedia);
-        Call<PetResponse> petResponseCall = endpointsApi.getAccountRecentMedia(userId);
-
-        petResponseCall.enqueue(new Callback<PetResponse>() {
-            @Override
-            public void onResponse(Call<PetResponse> call, Response<PetResponse> response) {
-                PetResponse petResponse = response.body();
-                petsList = petResponse.getPetsList();
-
-                displayRecyclerViewPets();
-            }
-
-            @Override
-            public void onFailure(Call<PetResponse> call, Throwable t) {
-                Toast.makeText(context, "Try Again, bad connection", Toast.LENGTH_SHORT).show();
-                Log.e("Account Info error", "Failed retrieving account info" + t.toString());
-            }
-        });
-    }
-
     @Override
     public void getStoredPets() {
         RestApiAdapter restApiAdapter = new RestApiAdapter();

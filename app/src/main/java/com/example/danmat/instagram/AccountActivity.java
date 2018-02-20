@@ -2,6 +2,7 @@ package com.example.danmat.instagram;
 
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.example.danmat.instagram.presenter.ProfileRecyclerViewFragmentPresent
 
 public class AccountActivity extends AppCompatActivity {
     private Toolbar toolbar;
+    private String accountActivityUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,17 @@ public class AccountActivity extends AppCompatActivity {
                     RecyclerViewAccountFragment recyclerViewAccountFragment = new RecyclerViewAccountFragment();
                     recyclerViewAccountFragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, recyclerViewAccountFragment).commit();*/
+
+                    accountActivityUserName = accountUserName.getEditText().getText().toString();
                     Toast.makeText(AccountActivity.this, "Account saved succesfully " + accountUserName.getEditText().getText().toString(), Toast.LENGTH_LONG).show();
+
+                    Fragment recyclerViewAccountFragment = new RecyclerViewAccountFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("instagramUserName", accountActivityUserName);
+                    recyclerViewAccountFragment.setArguments(bundle);
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.contact_layout_name, recyclerViewAccountFragment);
+                    transaction.commit();
 
                 } catch (Exception e) {
                     Log.e("saveAccount", e.getMessage(), e);
@@ -60,6 +72,10 @@ public class AccountActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.optionsMenu_item_registerUser:
+                Intent notificationIntent = new Intent(this, NotificationActivity.class);
+                startActivity(notificationIntent);
+                break;
             case R.id.optionsMenu_item_account:
                 Intent accountIntent = new Intent(this, AccountActivity.class);
                 startActivity(accountIntent);

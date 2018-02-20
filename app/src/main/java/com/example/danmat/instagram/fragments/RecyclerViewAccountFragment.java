@@ -2,6 +2,7 @@ package com.example.danmat.instagram.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,19 +10,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.danmat.instagram.R;
 import com.example.danmat.instagram.adapters.ProfileAdapter;
 import com.example.danmat.instagram.pojo.Pet;
-import com.example.danmat.instagram.presenter.IRecyclerViewProfileFragmentPresenter;
-import com.example.danmat.instagram.presenter.ProfileRecyclerViewFragmentPresenter;
+import com.example.danmat.instagram.presenter.AccountRecyclerViewFragmentPresenter;
+import com.example.danmat.instagram.presenter.IRecyclerViewAccountFragmentPresenter;
+import com.example.danmat.instagram.restApi.apiConstants;
 
 import java.util.ArrayList;
 
 public class RecyclerViewAccountFragment extends Fragment implements IRecyclerViewProfileView {
     ArrayList<Pet> petsList;
-    private RecyclerView petsListRecyclerView;
-    private IRecyclerViewProfileFragmentPresenter iRecyclerViewProfileFragmentPresenter;
+    private RecyclerView instagramPetsListRecyclerView;
+    private IRecyclerViewAccountFragmentPresenter accountRecyclerViewFragmentPresenter;
     private String accountUserName;
 
     public RecyclerViewAccountFragment() {
@@ -34,17 +37,19 @@ public class RecyclerViewAccountFragment extends Fragment implements IRecyclerVi
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        petsListRecyclerView = (RecyclerView) v.findViewById(R.id.profile_recyclerView_pets);
-        String accountUserName = "";
+        String defaultInstagramAccountUserName = apiConstants.INSTAGRAM_USER_NAME;
+        String defaultInstagramAccountUserId = apiConstants.INSTAGRAM_USER_ID;
+        String instagramAccountUserName = getArguments().getString("instagramUserName");
 
-        if(getArguments() != null) {
-            accountUserName = getArguments().getString("accountUserName");
-        }
+        TextView instagramUserNameTextView = (TextView) v.findViewById(R.id.fragmentProfile_textView_name);
+        instagramUserNameTextView.setText(instagramAccountUserName);
 
-        iRecyclerViewProfileFragmentPresenter = new ProfileRecyclerViewFragmentPresenter(
+        instagramPetsListRecyclerView = (RecyclerView) v.findViewById(R.id.profile_recyclerView_pets);
+
+        accountRecyclerViewFragmentPresenter = new AccountRecyclerViewFragmentPresenter(
                 this,
                 getContext(),
-                accountUserName
+                defaultInstagramAccountUserId
         );
 
         return v;
@@ -54,13 +59,13 @@ public class RecyclerViewAccountFragment extends Fragment implements IRecyclerVi
     public void generateVerticalLinearLayout() {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        petsListRecyclerView.setLayoutManager(llm);
+        instagramPetsListRecyclerView.setLayoutManager(llm);
     }
 
     @Override
     public void generateGridLayout() {
         GridLayoutManager glm = new GridLayoutManager(getActivity(), 2);
-        petsListRecyclerView.setLayoutManager(glm);
+        instagramPetsListRecyclerView.setLayoutManager(glm);
     }
 
     @Override
@@ -70,6 +75,10 @@ public class RecyclerViewAccountFragment extends Fragment implements IRecyclerVi
 
     @Override
     public void initializeRVAdapter(ProfileAdapter petAdapter) {
-        petsListRecyclerView.setAdapter(petAdapter);
+        instagramPetsListRecyclerView.setAdapter(petAdapter);
     }
+
+    /*private String getInstagramAccountUserId(String accountUserName) {
+        return "666";
+    }*/
 }

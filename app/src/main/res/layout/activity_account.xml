@@ -42,21 +42,21 @@
                 android:textSize="@dimen/contact_fieldName"
                 android:hint="@string/account_textview_userName" />
         </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/contact_layout_name">
-
-        <Button
-            android:id="@+id/account_button_sendForm"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:padding="@dimen/activity_general_margin"
-            android:text="@string/account_button_sendForm"
-            tools:theme="@style/mainButton" />
-    </RelativeLayout>
+            android:orientation="horizontal"
+            android:layout_below="@+id/account_textInputLayout_userName">
+
+            <Button
+                android:id="@+id/account_button_sendForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/activity_general_margin"
+                android:text="@string/account_button_sendForm"
+                tools:theme="@style/mainButton" />
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>
