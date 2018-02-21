@@ -47,6 +47,10 @@ public class Top5Activity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.optionsMenu_item_registerUser:
+                Intent notificationIntent = new Intent(this, NotificationActivity.class);
+                startActivity(notificationIntent);
+                break;
             case R.id.optionsMenu_item_account:
                 Intent accountIntent = new Intent(this, AccountActivity.class);
                 startActivity(accountIntent);

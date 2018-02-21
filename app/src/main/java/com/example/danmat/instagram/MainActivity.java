@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
-            /*case R.id.optionsMenu_item_registerUser:
+            case R.id.optionsMenu_item_registerUser:
                 Intent notificationIntent = new Intent(this, NotificationActivity.class);
                 startActivity(notificationIntent);
-                break;*/
+                break;
             case R.id.optionsMenu_item_account:
                 Intent accountIntent = new Intent(this, AccountActivity.class);
                 startActivity(accountIntent);
@@ -110,10 +110,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Fragment> addFragments() {
         ArrayList<Fragment> fragments = new ArrayList<>();
-
         fragments.add(new RecyclerViewFragment());
         fragments.add(new ProfileFragment());
-//        fragments.add(new RecyclerViewAccountFragment());
 
         return fragments;
     }

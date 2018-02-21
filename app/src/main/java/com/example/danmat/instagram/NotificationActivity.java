@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.danmat.instagram.restApi.EndpointsApi;
 import com.example.danmat.instagram.restApi.adapter.RestApiAdapter;
+import com.example.danmat.instagram.restApi.apiConstants;
 import com.example.danmat.instagram.restApi.model.InstagramUserResponse;
 import com.example.danmat.instagram.restApi.model.UserResponse;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -22,6 +23,8 @@ import retrofit2.Response;
 
 public class NotificationActivity extends AppCompatActivity {
     private Toolbar toolbar;
+    private String instagramUserId;
+    private String deviceId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +35,9 @@ public class NotificationActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String token = FirebaseInstanceId.getInstance().getToken();
-        String instagramUserId = "666";
+        instagramUserId = apiConstants.INSTAGRAM_USER_ID;
+        deviceId = FirebaseInstanceId.getInstance().getToken();
         registerInstagramUser(token, instagramUserId);
-    }
-
-    public void launchNotification(View v) {
-        String deviceId = FirebaseInstanceId.getInstance().getToken();
-        String instagramUserId = "1313";
         registerInstagramUser(deviceId, instagramUserId);
     }
 
@@ -75,6 +74,10 @@ public class NotificationActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.optionsMenu_item_registerUser:
+                Intent notificationIntent = new Intent(this, NotificationActivity.class);
+                startActivity(notificationIntent);
+                break;
             case R.id.optionsMenu_item_account:
                 Intent accountIntent = new Intent(this, AccountActivity.class);
                 startActivity(accountIntent);

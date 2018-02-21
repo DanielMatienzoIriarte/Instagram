@@ -35,12 +35,6 @@ public class AccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    /*Bundle bundle = new Bundle();
-                    bundle.putString("accountUserName", accountUserName.getEditText().getText().toString());
-                    RecyclerViewAccountFragment recyclerViewAccountFragment = new RecyclerViewAccountFragment();
-                    recyclerViewAccountFragment.setArguments(bundle);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container, recyclerViewAccountFragment).commit();*/
-
                     accountActivityUserName = accountUserName.getEditText().getText().toString();
                     Toast.makeText(AccountActivity.this, "Account saved succesfully " + accountUserName.getEditText().getText().toString(), Toast.LENGTH_LONG).show();
 
