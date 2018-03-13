@@ -1,5 +1,6 @@
 package com.example.danmat.instagram;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -42,8 +43,9 @@ public class AccountActivity extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     bundle.putString("instagramUserName", accountActivityUserName);
                     recyclerViewAccountFragment.setArguments(bundle);
+
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.contact_layout_name, recyclerViewAccountFragment);
+                    transaction.replace(R.id.account_relativeLayout, recyclerViewAccountFragment);
                     transaction.commit();
 
                 } catch (Exception e) {

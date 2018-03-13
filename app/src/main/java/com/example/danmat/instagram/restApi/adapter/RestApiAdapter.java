@@ -3,6 +3,7 @@ package com.example.danmat.instagram.restApi.adapter;
 import com.example.danmat.instagram.restApi.EndpointsApi;
 import com.example.danmat.instagram.restApi.apiConstants;
 import com.example.danmat.instagram.restApi.deserializer.PetDeserializer;
+import com.example.danmat.instagram.restApi.deserializer.PetUrlDeserializer;
 import com.example.danmat.instagram.restApi.model.PetResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -32,6 +33,12 @@ public class RestApiAdapter {
     public Gson buildPetDeserializer(){
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(PetResponse.class, new PetDeserializer());
+        return gsonBuilder.create();
+    }
+
+    public Gson buildUserDeserializer(){
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(PetResponse.class, new PetUrlDeserializer());
         return gsonBuilder.create();
     }
 

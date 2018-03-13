@@ -19,7 +19,7 @@ public interface EndpointsApi {
     Call<PetResponse> getRecentMedia();
 
     @GET(apiConstants.URL_GET_RECENT_MEDIA_ACCOUNT_USER_NO_API)
-    Call<PetResponse> getAccountFullInfoFromUrl(@Path(value = "user-name", encoded = true) String userName);
+    Call<PetResponse> getAccountFullInfoFromUrl(@Path(value = "user-id", encoded = true) String userName);
 
     @GET(apiConstants.URL_GET_RECENT_MEDIA_ACCOUNT_USER)
     Call<PetResponse> getInstagramAccountRecentMedia(@Path(value = "user-id", encoded = true) String userName);

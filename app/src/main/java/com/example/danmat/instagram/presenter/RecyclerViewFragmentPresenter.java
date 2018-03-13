@@ -40,6 +40,5 @@ public class RecyclerViewFragmentPresenter implements IRecyclerViewFragmentPrese
     public void displayRecyclerViewPets() {
         iRecyclerViewFragmentView.initializeRVAdapter(iRecyclerViewFragmentView.createAdapter(petsList));
         iRecyclerViewFragmentView.generateVerticalLinearLayout();
-        //iRecyclerViewFragmentView.generateGridLayout();
     }
 }

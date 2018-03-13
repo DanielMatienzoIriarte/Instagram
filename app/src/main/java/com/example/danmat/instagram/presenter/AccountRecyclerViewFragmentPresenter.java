@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.danmat.instagram.db.PetsConstructor;
+import com.example.danmat.instagram.fragments.IRecyclerViewAccountView;
 import com.example.danmat.instagram.fragments.IRecyclerViewProfileView;
 import com.example.danmat.instagram.pojo.Pet;
 import com.example.danmat.instagram.restApi.EndpointsApi;
@@ -19,30 +20,27 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AccountRecyclerViewFragmentPresenter implements IRecyclerViewAccountFragmentPresenter {
-    private IRecyclerViewProfileView recyclerViewAccountFragment;
+    private IRecyclerViewAccountView recyclerViewAccountFragment;
     private Context context;
     private PetsConstructor petsConstructor;
     private ArrayList<Pet> petsList;
 
     public AccountRecyclerViewFragmentPresenter(
-            IRecyclerViewProfileView iRecyclerViewProfileView,
+            IRecyclerViewAccountView iRecyclerViewAccountView,
             Context context,
             String instagramAccountUserId
     )
     {
-        this.recyclerViewAccountFragment = iRecyclerViewProfileView;
+        this.recyclerViewAccountFragment = iRecyclerViewAccountView;
         this.context = context;
         getAccountStoredPets(instagramAccountUserId);
     }
     @Override
     public void getAccountStoredPets(String instagramAccountUserId) {
-
         RestApiAdapter restApiAdapter = new RestApiAdapter();
-        Gson gsonRecentMedia = restApiAdapter.buildPetDeserializer();
+        Gson gsonRecentMedia = restApiAdapter.buildUserDeserializer();
         EndpointsApi urlEndpointsApi = restApiAdapter.setRestConnectionInstagramURL(gsonRecentMedia);
-        EndpointsApi endpointsApi = restApiAdapter.setRestConnectionInstagramApi(gsonRecentMedia);
-        //endpointsApi.getAccountFullInfoFromUrl(instagramAccountUserId);
-        Call<PetResponse> petResponseCall = endpointsApi.getInstagramAccountRecentMedia(instagramAccountUserId);
+        Call<PetResponse> petResponseCall = urlEndpointsApi.getAccountFullInfoFromUrl(instagramAccountUserId);
 
         petResponseCall.enqueue(new Callback<PetResponse>() {
             @Override

@@ -13,7 +13,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.danmat.instagram.R;
+import com.example.danmat.instagram.adapters.AccountAdapter;
 import com.example.danmat.instagram.adapters.ProfileAdapter;
+import com.example.danmat.instagram.adapters.petagramAdapterInterface;
 import com.example.danmat.instagram.pojo.Pet;
 import com.example.danmat.instagram.presenter.AccountRecyclerViewFragmentPresenter;
 import com.example.danmat.instagram.presenter.IRecyclerViewAccountFragmentPresenter;
@@ -21,7 +23,7 @@ import com.example.danmat.instagram.restApi.apiConstants;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAccountFragment extends Fragment implements IRecyclerViewProfileView {
+public class RecyclerViewAccountFragment extends Fragment implements IRecyclerViewAccountView {
     ArrayList<Pet> petsList;
     private RecyclerView instagramPetsListRecyclerView;
     private IRecyclerViewAccountFragmentPresenter accountRecyclerViewFragmentPresenter;
@@ -49,7 +51,7 @@ public class RecyclerViewAccountFragment extends Fragment implements IRecyclerVi
         accountRecyclerViewFragmentPresenter = new AccountRecyclerViewFragmentPresenter(
                 this,
                 getContext(),
-                defaultInstagramAccountUserId
+                instagramAccountUserName
         );
 
         return v;
@@ -69,16 +71,12 @@ public class RecyclerViewAccountFragment extends Fragment implements IRecyclerVi
     }
 
     @Override
-    public ProfileAdapter createAdapter(ArrayList<Pet> petsList) {
-        return new ProfileAdapter(petsList, getActivity());
+    public AccountAdapter createAdapter(ArrayList<Pet> petsList) {
+        return new AccountAdapter(petsList, getActivity());
     }
 
     @Override
-    public void initializeRVAdapter(ProfileAdapter petAdapter) {
-        instagramPetsListRecyclerView.setAdapter(petAdapter);
+    public void initializeRVAdapter(AccountAdapter userAdapter) {
+        instagramPetsListRecyclerView.setAdapter(userAdapter);
     }
-
-    /*private String getInstagramAccountUserId(String accountUserName) {
-        return "666";
-    }*/
 }

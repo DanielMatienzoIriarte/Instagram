@@ -15,4 +15,8 @@ public final class JsonKeys {
     public static final String CAROUSEL_MEDIA = "carousel_media";
     public static final String CAROUSEL_IMAGES = "images";
     public static final String CAROUSEL_IMAGES_LOW_RESOLUTION = "low_resolution";
+    // URL RETRIEVAL
+    public static final String USER_MEDIA_RESPONSE_ARRAY = "media";
+    public static final String USER_MEDIA_NODES_RESPONSE_ARRAY = "nodes";
+    public static final String USER_MEDIA_SOURCE = "display_src";
 }
