@@ -5,7 +5,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.danmat.instagram.db.PetsConstructor;
-import com.example.danmat.instagram.fragments.IRecyclerViewAccountView;
+import com.example.danmat.instagram.fragments.IRecyclerViewAccountProfileView;
 import com.example.danmat.instagram.fragments.IRecyclerViewProfileView;
 import com.example.danmat.instagram.pojo.Pet;
 import com.example.danmat.instagram.restApi.EndpointsApi;
@@ -19,28 +19,26 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AccountRecyclerViewFragmentPresenter implements IRecyclerViewAccountFragmentPresenter {
-    private IRecyclerViewAccountView recyclerViewAccountFragment;
+public class AccountProfileRecyclerViewFragmentPresenter implements IRecyclerViewAccountProfileFragmentPresenter {
+    private IRecyclerViewAccountProfileView iRecyclerViewAccountProfileView;
     private Context context;
     private PetsConstructor petsConstructor;
     private ArrayList<Pet> petsList;
 
-    public AccountRecyclerViewFragmentPresenter(
-            IRecyclerViewAccountView iRecyclerViewAccountView,
-            Context context,
-            String instagramAccountUserId
-    )
-    {
-        this.recyclerViewAccountFragment = iRecyclerViewAccountView;
+    public AccountProfileRecyclerViewFragmentPresenter(
+            IRecyclerViewAccountProfileView iRecyclerViewAccountProfileView,
+            Context context
+    ) {
+        this.iRecyclerViewAccountProfileView = iRecyclerViewAccountProfileView;
         this.context = context;
-        getAccountStoredPets(instagramAccountUserId);
+        getStoredPets();
     }
     @Override
-    public void getAccountStoredPets(String instagramAccountUserId) {
+    public void getStoredPets() {
         RestApiAdapter restApiAdapter = new RestApiAdapter();
-        Gson gsonRecentMedia = restApiAdapter.buildUserDeserializer();
-        EndpointsApi urlEndpointsApi = restApiAdapter.setRestConnectionInstagramURL(gsonRecentMedia);
-        Call<PetResponse> petResponseCall = urlEndpointsApi.getAccountFullInfoFromUrl(instagramAccountUserId);
+        Gson gsonRecentMedia = restApiAdapter.buildPetDeserializer();
+        EndpointsApi endpointsApi = restApiAdapter.setRestConnectionInstagramApi(gsonRecentMedia);
+        Call<PetResponse> petResponseCall = endpointsApi.getRecentMedia();
 
         petResponseCall.enqueue(new Callback<PetResponse>() {
             @Override
@@ -53,15 +51,15 @@ public class AccountRecyclerViewFragmentPresenter implements IRecyclerViewAccoun
 
             @Override
             public void onFailure(Call<PetResponse> call, Throwable t) {
-                Toast.makeText(context, "Try Again, bad connection , account", Toast.LENGTH_SHORT).show();
-                Log.e("Account Info error", "Failed retrieving account info" + t.toString());
+                Toast.makeText(context, "Try Again, bad connection", Toast.LENGTH_SHORT).show();
+                Log.e("Connection failed", t.toString());
             }
         });
     }
 
     @Override
     public void displayRecyclerViewPets() {
-        recyclerViewAccountFragment.initializeRVAdapter(recyclerViewAccountFragment.createAdapter(petsList));
-        recyclerViewAccountFragment.generateGridLayout();
+        iRecyclerViewAccountProfileView.initializeRVAdapter(iRecyclerViewAccountProfileView.createAdapter(petsList));
+        iRecyclerViewAccountProfileView.generateGridLayout();
     }
 }

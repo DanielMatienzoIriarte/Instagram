@@ -37,16 +37,16 @@ public class RecyclerViewAccountFragment extends Fragment implements IRecyclerVi
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_profile, container, false);
+        View v = inflater.inflate(R.layout.account_profile_fragment, container, false);
 
         String defaultInstagramAccountUserName = apiConstants.INSTAGRAM_USER_NAME;
         String defaultInstagramAccountUserId = apiConstants.INSTAGRAM_USER_ID;
         String instagramAccountUserName = getArguments().getString("instagramUserName");
 
-        TextView instagramUserNameTextView = (TextView) v.findViewById(R.id.fragmentProfile_textView_name);
+        TextView instagramUserNameTextView = (TextView) v.findViewById(R.id.fragmentAccountProfile_textView_name);
         instagramUserNameTextView.setText(instagramAccountUserName);
 
-        instagramPetsListRecyclerView = (RecyclerView) v.findViewById(R.id.profile_recyclerView_pets);
+        instagramPetsListRecyclerView = (RecyclerView) v.findViewById(R.id.accountProfile_recyclerView_pets);
 
         accountRecyclerViewFragmentPresenter = new AccountRecyclerViewFragmentPresenter(
                 this,

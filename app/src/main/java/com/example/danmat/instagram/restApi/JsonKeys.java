@@ -16,7 +16,12 @@ public final class JsonKeys {
     public static final String CAROUSEL_IMAGES = "images";
     public static final String CAROUSEL_IMAGES_LOW_RESOLUTION = "low_resolution";
     // URL RETRIEVAL
+    public static final String USER_GRAPHQL_RESPONSE_ARRAY = "graphql";
     public static final String USER_MEDIA_RESPONSE_ARRAY = "media";
-    public static final String USER_MEDIA_NODES_RESPONSE_ARRAY = "nodes";
+    public static final String USER_MEDIA_NEW_RESPONSE_ARRAY = "edge_owner_to_timeline_media";
+    public static final String USER_EDGES_NEW_RESPONSE_ARRAY = "edges";
+    public static final String USER_MEDIA_NODE_RESPONSE_ARRAY = "node";
     public static final String USER_MEDIA_SOURCE = "display_src";
+    public static final String USER_MEDIA_URL = "display_url";
+    public static final String USER_MEDIA_LIKE = "edge_liked_by";
 }

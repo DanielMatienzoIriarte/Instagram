@@ -19,20 +19,23 @@ public class PetUrlDeserializer implements JsonDeserializer<PetResponse> {
     public PetResponse deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         Gson gson = new Gson();
         PetResponse petResponse = gson.fromJson(json, PetResponse.class);
-        JsonObject userResponseData = json.getAsJsonObject().getAsJsonObject(JsonKeys.USER);
-        JsonObject userResponseMedia = userResponseData.getAsJsonObject(JsonKeys.USER_MEDIA_RESPONSE_ARRAY);
-        JsonArray userResponseMediaNodes = userResponseMedia.getAsJsonArray(JsonKeys.USER_MEDIA_NODES_RESPONSE_ARRAY);
+        JsonObject userResponseGraphql = json.getAsJsonObject().getAsJsonObject(JsonKeys.USER_GRAPHQL_RESPONSE_ARRAY);
+        JsonObject userResponseData = userResponseGraphql.getAsJsonObject(JsonKeys.USER);
+        JsonObject userResponseMedia = userResponseData.getAsJsonObject(JsonKeys.USER_MEDIA_NEW_RESPONSE_ARRAY);
+        JsonArray userResponseMediaEdges = userResponseMedia.getAsJsonArray(JsonKeys.USER_EDGES_NEW_RESPONSE_ARRAY);
+//        JsonObject userResponseMediaNodes = userResponseMediaEdges.getAsJsonObject(JsonKeys.USER_MEDIA_NODES_RESPONSE_ARRAY);
 
-        petResponse.setPetsList(jsonPetDeserializer(userResponseMediaNodes));
+        petResponse.setPetsList(jsonPetDeserializer(userResponseMediaEdges));
         return petResponse;
     }
 
-    private ArrayList<Pet> jsonPetDeserializer(JsonArray userResponseMediaNodes){
+    private ArrayList<Pet> jsonPetDeserializer(JsonArray userResponseMediaEdges){
         ArrayList<Pet> petsList = new ArrayList<>();
-        for (int i = 0; i < userResponseMediaNodes.size() ; i++) {
-            JsonObject userResponseDataObject = userResponseMediaNodes.get(i).getAsJsonObject();
-            String imageSource = userResponseDataObject.get(JsonKeys.USER_MEDIA_SOURCE).toString();
-            JsonObject likesJson = userResponseDataObject.getAsJsonObject(JsonKeys.MEDIA_LIKES);
+        for (int i = 0; i < userResponseMediaEdges.size() ; i++) {
+            JsonObject userResponseDataObject = userResponseMediaEdges.get(i).getAsJsonObject();
+            JsonObject userResponseNode = userResponseDataObject.getAsJsonObject(JsonKeys.USER_MEDIA_NODE_RESPONSE_ARRAY);
+            String imageSource = userResponseNode.get(JsonKeys.USER_MEDIA_URL).getAsString();
+            JsonObject likesJson = userResponseNode.getAsJsonObject(JsonKeys.USER_MEDIA_LIKE);
             int likes = likesJson.get(JsonKeys.MEDIA_LIKES_COUNT).getAsInt();
 
             Pet currentPet = new Pet();
