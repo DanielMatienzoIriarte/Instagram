@@ -1,5 +1,7 @@
 package com.example.danmat.instagram.restApi;
 
+import com.example.danmat.instagram.restApi.model.InstagramLikeResponse;
+import com.example.danmat.instagram.restApi.model.InstagramPetResponse;
 import com.example.danmat.instagram.restApi.model.InstagramUserResponse;
 import com.example.danmat.instagram.restApi.model.PetResponse;
 import com.example.danmat.instagram.restApi.model.UserResponse;
@@ -31,4 +33,7 @@ public interface EndpointsApi {
     @FormUrlEncoded
     @POST(apiConstants.KEY_POST_INSTAGRAM_STORAGE)
     Call<InstagramUserResponse> registerUser(@Field("deviceId") String deviceId, @Field("instagramUserId") String instagramUserId);
+
+    @POST(apiConstants.INSTAGRAM_LIKE_MEDIA)
+    Call<InstagramLikeResponse> likeMedia(@Path("media-id") String mediaId);
 }

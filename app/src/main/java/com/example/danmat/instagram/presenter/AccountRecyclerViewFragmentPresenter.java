@@ -53,7 +53,7 @@ public class AccountRecyclerViewFragmentPresenter implements IRecyclerViewAccoun
 
             @Override
             public void onFailure(Call<PetResponse> call, Throwable t) {
-                Toast.makeText(context, "Try Again, bad connection , account", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Try Again, bad connection, account error", Toast.LENGTH_SHORT).show();
                 Log.e("Account Info error", "Failed retrieving account info" + t.toString());
             }
         });

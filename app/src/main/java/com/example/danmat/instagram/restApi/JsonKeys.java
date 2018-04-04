@@ -22,6 +22,7 @@ public final class JsonKeys {
     public static final String USER_EDGES_NEW_RESPONSE_ARRAY = "edges";
     public static final String USER_MEDIA_NODE_RESPONSE_ARRAY = "node";
     public static final String USER_MEDIA_SOURCE = "display_src";
+    public static final String USER_MEDIA_ID = "id";
     public static final String USER_MEDIA_URL = "display_url";
     public static final String USER_MEDIA_LIKE = "edge_liked_by";
 }

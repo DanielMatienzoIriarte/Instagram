@@ -1,7 +1,6 @@
 package com.example.danmat.instagram.restApi.deserializer;
 
 import com.example.danmat.instagram.pojo.Pet;
-import com.example.danmat.instagram.pojo.Pet;
 import com.example.danmat.instagram.restApi.JsonKeys;
 import com.example.danmat.instagram.restApi.model.PetResponse;
 import com.google.gson.Gson;
@@ -15,7 +14,7 @@ import com.google.gson.JsonParseException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class PetUrlDeserializer implements JsonDeserializer<PetResponse> {
+public class PetLikeDeserializer implements JsonDeserializer<PetResponse> {
     @Override
     public PetResponse deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         Gson gson = new Gson();

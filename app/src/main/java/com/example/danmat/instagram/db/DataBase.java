@@ -78,7 +78,7 @@ public class DataBase extends SQLiteOpenHelper {
 
         while (result.moveToNext()) {
             Pet currentPet = new Pet();
-            currentPet.setPetId(result.getInt(0));
+            currentPet.setPetId(result.getLong(0));
             currentPet.setName(result.getString(1));
             currentPet.setAvatar(result.getInt(2));
 //            currentPet.setRate(0);
@@ -110,7 +110,7 @@ public class DataBase extends SQLiteOpenHelper {
 
         while (result.moveToNext()) {
             Pet currentPet = new Pet();
-            currentPet.setPetId(result.getInt(0));
+            currentPet.setPetId(result.getLong(0));
             currentPet.setName(result.getString(1));
             currentPet.setAvatar(result.getInt(2));
             currentPet.setRate(result.getInt(3));
@@ -131,7 +131,7 @@ public class DataBase extends SQLiteOpenHelper {
                 " AS r WHERE r." + DataBaseConstants.TABLE_RATE_PET_ID +
                 " = ?;";
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery(query, new String[] {String.format(Integer.toString(pet.getPetId()))});
+        Cursor result = db.rawQuery(query, new String[] {String.format(Long.toString(pet.getPetId()))});
 
         if (result.moveToNext()) {
             rate = result.getInt(0);

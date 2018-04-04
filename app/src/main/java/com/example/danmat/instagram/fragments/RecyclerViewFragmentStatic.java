@@ -53,13 +53,13 @@ public class RecyclerViewFragmentStatic extends Fragment {
 
     private void initializePetsList(){
         petsList = new ArrayList<Pet>();
-        petsList.add(new Pet(1, "Mortis", R.drawable.dog_bark_icon));
-        petsList.add(new Pet(2, "Vato Loco", R.drawable.dog_chihuahua_bone_icon));
-        petsList.add(new Pet(3, "Gordo", R.drawable.dog_dalmatian_king_icon));
-        petsList.add(new Pet(4, "Rita", R.drawable.dog_einstein_icon));
-        petsList.add(new Pet(5, "Laika", R.drawable.dog_haski_icon));
-        petsList.add(new Pet(6, "Dogo", R.drawable.dog_einstein_icon));
-        petsList.add(new Pet(7, "Linda", R.drawable.dog_haski_icon));
+        petsList.add(new Pet(1L, "Mortis", R.drawable.dog_bark_icon));
+        petsList.add(new Pet(2L, "Vato Loco", R.drawable.dog_chihuahua_bone_icon));
+        petsList.add(new Pet(3L, "Gordo", R.drawable.dog_dalmatian_king_icon));
+        petsList.add(new Pet(4L, "Rita", R.drawable.dog_einstein_icon));
+        petsList.add(new Pet(5L, "Laika", R.drawable.dog_haski_icon));
+        petsList.add(new Pet(6L, "Dogo", R.drawable.dog_einstein_icon));
+        petsList.add(new Pet(7L, "Linda", R.drawable.dog_haski_icon));
     }
 
     private void initializeAdapter(){

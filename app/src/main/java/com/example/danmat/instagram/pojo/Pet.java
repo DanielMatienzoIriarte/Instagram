@@ -1,7 +1,7 @@
 package com.example.danmat.instagram.pojo;
 
 public class Pet {
-    private int petId;
+    private Long petId;
     private String name;
     private int avatar;
     private int rate;
@@ -11,7 +11,7 @@ public class Pet {
 
     }
 
-    public Pet(int petId, String name, int avatar) {
+    public Pet(Long petId, String name, int avatar) {
         this.petId = petId;
         this.name = name;
         this.avatar = avatar;
@@ -19,7 +19,7 @@ public class Pet {
         this.avatarUrl ="";
     }
 
-    public Pet(int petId, String name, int avatar, int rate) {
+    public Pet(Long petId, String name, int avatar, int rate) {
         this.petId = petId;
         this.name = name;
         this.avatar = avatar;
@@ -27,9 +27,9 @@ public class Pet {
         this.avatarUrl = "";
     }
 
-    public int getPetId() { return petId; }
+    public Long getPetId() { return petId; }
 
-    public void setPetId(int petId) {
+    public void setPetId(Long petId) {
         this.petId = petId;
     }
 

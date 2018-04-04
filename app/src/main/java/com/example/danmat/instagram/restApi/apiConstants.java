@@ -17,4 +17,5 @@ public final class apiConstants {
     //Constants related to instagram users
     public static final String INSTAGRAM_USER_ID = "6790680545";
     public static final String INSTAGRAM_USER_NAME = "DanMat1101";
+    public static final String INSTAGRAM_LIKE_MEDIA = "media/{media-id}/likes" + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 }

@@ -2,6 +2,7 @@ package com.example.danmat.instagram.adapters;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.example.danmat.instagram.R;
 import com.example.danmat.instagram.db.PetsConstructor;
 import com.example.danmat.instagram.pojo.Pet;
+import com.example.danmat.instagram.restApi.model.InstagramLikeResponse;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -35,7 +37,8 @@ public class AccountProfileAdapter extends RecyclerView.Adapter<AccountProfileAd
     @Override
     public void onBindViewHolder(final ProfileViewHolder profileViewHolder, int position) {
         final Pet pet = petsList.get(position);
-        final PetsConstructor petsConstructor = new PetsConstructor(petProfileActivity);
+        //final PetsConstructor petsConstructor = new PetsConstructor(petProfileActivity);
+        //final mediaLikesConstructor = new InstagramLikeResponse("", "", "");
 
         Picasso.with(petProfileActivity)
                 .load(pet.getAvatarUrl())
@@ -43,15 +46,13 @@ public class AccountProfileAdapter extends RecyclerView.Adapter<AccountProfileAd
                 .into(profileViewHolder.cardview_avatar);
         profileViewHolder.cardview_rate.setText(String.valueOf(pet.getRate()));
 
-        profileViewHolder.cardview_avatar.setOnClickListener(new View.OnClickListener(){
+        /*profileViewHolder.cardview_avatar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(petProfileActivity, pet.getName() + " liked", Toast.LENGTH_SHORT).show();
-                //TODO implement likes and integration with instagram
-                petsConstructor.likePet(pet);
-                profileViewHolder.cardview_rate.setText(String.format(Integer.toString(petsConstructor.getPetRate(pet))));
+                Toast.makeText(petProfileActivity, (String.valueOf(pet.getPetId())) + " liked", Toast.LENGTH_SHORT).show();
+                Log.i("Instagram Account ID", "ID:" + String.valueOf(pet.getPetId()));
             }
-        });
+        });*/
     }
 
     @Override
