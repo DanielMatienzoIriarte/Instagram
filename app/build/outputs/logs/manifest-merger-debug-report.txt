@@ -62,8 +62,18 @@ MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Roxy\.gradle\cach
 MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\c9aeee8a10ca9ea629554ab56fbef5b8\AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:6:5-68
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\792b92286a9c57d33eab3a7803c95eaa\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\792b92286a9c57d33eab3a7803c95eaa\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\bc69ed0c850b21f2dccea57003e6c3bd\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\bc69ed0c850b21f2dccea57003e6c3bd\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\c9aeee8a10ca9ea629554ab56fbef5b8\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\c9aeee8a10ca9ea629554ab56fbef5b8\AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:6:22-65
 application
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:7:5-87:19
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:8:5-87:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\8aeebd7ff4e939f48355b67ae5981708\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\8aeebd7ff4e939f48355b67ae5981708\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\159c8cc9470040680b0cde8775b2700a\AndroidManifest.xml:25:5-29:19
@@ -127,93 +137,93 @@ MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\cd74e0ad62e4da6d03b4bff833c4f08c\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\cd74e0ad62e4da6d03b4bff833c4f08c\AndroidManifest.xml:5:5-20
 	android:supportsRtl
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:14:9-40
 activity#com.example.danmat.instagram.MainActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:14:9-20:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:15:9-21:20
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:14:19-47
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:15:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:15:13-19:29
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:16:17-69
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:16:25-66
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:18:17-77
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:18:27-74
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:19:27-74
 activity#com.example.danmat.instagram.PetDetailActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:21:9-29:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:22:9-30:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:23:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:24:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:22:13-46
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:23:13-46
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:26:13-28:49
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:27:13-29:49
 	android:value
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:28:17-46
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:29:17-46
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:27:17-63
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:28:17-63
 activity#com.example.danmat.instagram.Top5Activity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:30:9-38:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:31:9-39:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:32:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:33:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:31:13-41
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:32:13-41
 activity#com.example.danmat.instagram.ContactActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:39:9-47:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:40:9-48:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:41:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:42:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:40:13-44
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:41:13-44
 activity#com.example.danmat.instagram.AboutActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:48:9-56:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:49:9-57:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:50:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:51:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:49:13-42
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:50:13-42
 activity#com.example.danmat.instagram.AccountActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:57:9-65:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:58:9-66:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:59:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:60:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:58:13-44
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:59:13-44
 activity#com.example.danmat.instagram.NotificationActivity
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:66:9-74:20
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:67:9-75:20
 	android:parentActivityName
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:68:13-55
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:69:13-55
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:67:13-49
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:68:13-49
 service#com.example.danmat.instagram.Notifications.NotificationService
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:76:9-80:19
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:77:9-81:19
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:76:18-67
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:77:18-67
 intent-filter#com.google.firebase.MESSAGING_EVENT
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:77:13-79:29
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:78:13-80:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:78:17-78
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:79:17-78
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:78:25-75
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:79:25-75
 service#com.example.danmat.instagram.Notifications.NotificationIdTokenService
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:81:9-85:19
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:82:9-86:19
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:81:18-74
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:82:18-74
 intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:82:13-84:29
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:83:13-85:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:83:17-80
+ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:84:17-80
 	android:name
-		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:83:25-77
+		ADDED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml:84:25-77
 uses-sdk
 INJECTED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\D\Proyectos\Instagram\app\src\main\AndroidManifest.xml
@@ -336,14 +346,6 @@ MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Roxy\.gradle\cach
 MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\c9aeee8a10ca9ea629554ab56fbef5b8\AndroidManifest.xml:22:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\792b92286a9c57d33eab3a7803c95eaa\AndroidManifest.xml:24:22-76
-uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\792b92286a9c57d33eab3a7803c95eaa\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\bc69ed0c850b21f2dccea57003e6c3bd\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\bc69ed0c850b21f2dccea57003e6c3bd\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\c9aeee8a10ca9ea629554ab56fbef5b8\AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\c9aeee8a10ca9ea629554ab56fbef5b8\AndroidManifest.xml:24:5-68
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\792b92286a9c57d33eab3a7803c95eaa\AndroidManifest.xml:25:22-65
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
 ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\792b92286a9c57d33eab3a7803c95eaa\AndroidManifest.xml:28:9-32:20
 MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Roxy\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\bc69ed0c850b21f2dccea57003e6c3bd\AndroidManifest.xml:28:9-32:20
