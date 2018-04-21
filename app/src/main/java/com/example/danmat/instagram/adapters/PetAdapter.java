@@ -2,7 +2,10 @@ package com.example.danmat.instagram.adapters;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +59,19 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder>{
                 Intent petDetailIntent = new Intent(petMainActivity, PetDetailActivity.class);
                 petDetailIntent.putExtra("Avatar", pet.getAvatar());
                 petDetailIntent.putExtra("Name", pet.getName());
-                petMainActivity.startActivity(petDetailIntent);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    Explode explodeTransition = new Explode();
+                    explodeTransition.setDuration(1000);
+                    petMainActivity.getWindow().setExitTransition(explodeTransition);
+                    petMainActivity.startActivity(petDetailIntent,
+                            ActivityOptionsCompat.makeSceneTransitionAnimation(
+                                petMainActivity, v, ""
+                            ).toBundle()
+                    );
+                } else {
+                    petMainActivity.startActivity(petDetailIntent);
+                }
             }
         });
     }

@@ -1,9 +1,15 @@
 package com.example.danmat.instagram;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -36,6 +42,14 @@ public class PetDetailActivity extends AppCompatActivity {
 
         petDetail_avatar.setImageResource(petAvatar);
         petDetail_name.setText(petName);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Slide slideTransition = new Slide(Gravity.RIGHT);
+            slideTransition.setDuration(1000);
+            this.getWindow().setEnterTransition(slideTransition);
+
+            this.getWindow().setReturnTransition(new Fade());
+        }
     }
 
     @Override
